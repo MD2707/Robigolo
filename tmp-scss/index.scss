@@ -1,0 +1,194 @@
+//sass --watch tmp-scss:stylesheet to convert scss to css.
+//Modify this file, not the direcotry "stylesheet"
+/**
+ VARIABLES
+**/
+$color-primary: #94f9f1; //couleur des yeux de robot.png
+$color-secondary:#9e9ea7; 
+$primary-color-input:#2e2a5c;
+$primary-font: 'Inter', sans-serif;
+$url-background:'../image/background-gradient.png';
+
+
+/**
+MIXIN
+**/
+@mixin glassy-effect-white-blured{
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.52);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(13.4px);
+-webkit-backdrop-filter: blur(13.4px);
+border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.zoom{
+  animation: zoom-in 0.5s ease-in-out 1 ;
+  
+  @keyframes zoom-in{
+       from { -webkit-transform: scale(0.2);}
+       to   {-webkit-transform: scale(1);}
+  }
+}
+
+.bounce{
+  animation: bounce 0.35s ease infinite alternate ;
+  animation-delay: 0.3s;
+  @keyframes bounce{
+       from {transform: translateY(0);}
+       to   {transform: translateY(-20px);}
+  }
+}
+
+/**
+ CODE GLOBAL
+**/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $primary-font;
+}
+
+#robot-img-container{
+  width: 25rem;
+  height: 25rem;
+}
+
+#robot{
+        width: 25rem;
+        height: 25rem;
+        margin-top: 4rem;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: url($url-background);
+    background-size: cover;
+    background-position:center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+     
+    & > div {
+        display: flex;
+        flex-direction: row;
+    }
+    & #left-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:space-between;
+
+        & #tw-container{
+            @include glassy-effect-white-blured;
+            width: 40rem;
+            height: 10rem;
+            z-index: 2;
+            padding: 2rem;
+            border-radius: 2rem;
+
+            & >#tw{
+                font-size: 1.5rem;
+                color: $primary-color-input;
+            }
+        }
+       
+    }
+}
+
+//custom start link
+.cta {
+  border: none;
+  background: none;
+  font-size: 2rem;
+  color: $primary-color-input; 
+  text-decoration: none;
+}
+
+.cta span {
+  padding-bottom: .7rem;
+  padding-right: 15px;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: $primary-color-input;
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: $primary-color-input;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+//responsive
+@media only screen and (max-width: 1110px) {
+  #left-container{
+    height: 25rem;
+  }
+  #robot{
+    margin: 0;
+  }
+  body{
+    height: 100vh;
+    &>div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  #robot{
+    width: 20rem;
+    height: 20rem;
+  }
+  #robot-img-container{
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 2rem;
+  }
+  #tw-container{
+    width: 20rem !important;
+    height: fit-content !important;
+    margin-bottom: 4rem;
+
+    &> #tw{
+      font-size: 1.2rem !important;
+    }
+  }
+ 
+  
+}
+

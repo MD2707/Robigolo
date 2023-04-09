@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesheet/robigolo.css">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script type="application/javascript" src="javascript/app.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div id="robot-img-container">
+            <img id="robot" class="zoom" src="image/robot.png" alt="Robot" srcset="">
+        </div>
+        <div id="twRes-container">
+            <p id="twRes"></p>
+        </div>
+    </div>
+    <form id="form-submit-word" class="hidden">
+        <button id="btn-submit-word" class="cta" type ="button" >
+            <span class="hover-underline-animation"> Soumettre </span>
+            <svg viewBox="0 0 46 16" height="10" width="30" xmlns="http://www.w3.org/2000/svg" id="arrow-horizontal">
+                <path transform="translate(30)" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" data-name="Path 10" id="Path_10"></path>
+            </svg>
+        </button>
+        <input type="hidden" name="_next" value="http://127.0.0.1:5500/robigolo.html">
+      </form>
+    <form id="form-input">
+        <button type="submit"><img src="image/icon-send.png" alt="Envoyer" srcset=""></button>
+        <input type="text" name="mot" placeholder="Votre message ici !">
+    </form> 
+</body>
+<script>robigoloHandling()</script>
+</html>

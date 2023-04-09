@@ -1,0 +1,227 @@
+/**
+ VARIABLES
+**/
+/**
+MIXIN
+**/
+.zoom {
+  animation: zoom-in 0.5s ease-in-out 1;
+}
+@keyframes zoom-in {
+  from {
+    -webkit-transform: scale(0.2);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+.bounce {
+  animation: bounce 0.35s ease infinite alternate;
+  animation-delay: 0.3s;
+}
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.appear {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/**
+ CODE GLOBAL
+**/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+#robot-img-container {
+  width: 20rem;
+  height: 20rem;
+  margin-bottom: 8rem;
+}
+
+#robot {
+  width: 20rem;
+  height: 20rem;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../image/background-gradient.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+body #twRes-container {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.52);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(13.4px);
+  -webkit-backdrop-filter: blur(13.4px);
+  border: 1px solid rgb(255, 255, 255);
+  width: 20rem;
+  height: fit-content;
+  overflow: none;
+  padding: 2rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+body #twRes-container > #twRes {
+  font-size: 1.5rem;
+  color: #2e2a5c;
+}
+body > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+body #form-input {
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+body #form-input > button {
+  position: absolute;
+  right: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  z-index: 1;
+  border: none;
+  background-color: transparent;
+}
+body #form-input > button > img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+body #form-input button:hover {
+  cursor: pointer;
+}
+body #form-input > input {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.52);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(13.4px);
+  -webkit-backdrop-filter: blur(13.4px);
+  border: 1px solid rgb(255, 255, 255);
+  width: 100%;
+  height: 3.5rem;
+  padding: 0 1rem;
+  padding-left: 3rem;
+  border: 0.2rem solid transparent;
+  font-size: 1.25rem;
+  outline: none;
+  color: #2e2a5c;
+  transition: 0.3s ease;
+}
+body #form-input input::placeholder {
+  color: #9e9ea7;
+  font-size: 1.25rem;
+}
+
+.cta {
+  border: none;
+  background: none;
+  font-size: 1.75rem;
+  color: #2e2a5c;
+  text-decoration: none;
+}
+
+.cta span {
+  padding-bottom: 0.7rem;
+  padding-right: 15px;
+}
+
+.cta svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+  transform: translateX(0);
+}
+
+.cta:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animation {
+  position: relative;
+  color: #2e2a5c;
+  padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #2e2a5c;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+@media only screen and (max-width: 800px) {
+  .cta {
+    font-size: 1.4rem;
+    margin-top: 5rem;
+  }
+  #robot-img-container {
+    margin: 2rem 0;
+  }
+  #form-input {
+    width: 90vw !important;
+    position: absolute !important;
+    bottom: 2rem;
+  }
+  #form-input > input {
+    width: 100% !important;
+  }
+  body {
+    justify-content: flex-start;
+    position: relative;
+    align-items: center;
+    height: 100vh;
+  }
+  body > div {
+    flex-direction: column;
+  }
+  #twRes {
+    font-size: 1.2rem !important;
+  }
+}
+
+/*# sourceMappingURL=robigolo.css.map */

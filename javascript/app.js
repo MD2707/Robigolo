@@ -1,5 +1,7 @@
 //UTILS
-const BASE_API_URL = "https:/apimot.mathias-duprat.fr/api/motDef/";
+const BASE_API_URL = "/api/motDef/";
+ET
+	https://robigolo.mathias-duprat.fr/apimot.mathias-duprat.fr/api/motDef/truc
 const sleep = m => new Promise(r => setTimeout(r, m))
 //message
 const messageDebutJeu = 'A vous de jouer ! Ecrivez un mot !';

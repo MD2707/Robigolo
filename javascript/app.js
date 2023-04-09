@@ -1,5 +1,5 @@
 //UTILS
-const BASE_API_URL = "/api/motDef/";
+const BASE_API_URL = "https://127.0.0.1:8000/api/motDef/";
 const sleep = m => new Promise(r => setTimeout(r, m))
 //message
 const messageDebutJeu = 'A vous de jouer ! Ecrivez un mot !';

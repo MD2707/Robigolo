@@ -71,7 +71,7 @@ function robigoloHandling(){
     input.style.display="none";
     input.name="Mot";
     form.appendChild(input);
-    form.action ="https://formsubmit.co/mathias.duprat@live.com" ;
+    form.action ="https://formsubmit.co/robigolo@mathias-duprat.fr" ;
     form.method="POST" ;
     form.enctype="multipart/form-data";
     form.submit();

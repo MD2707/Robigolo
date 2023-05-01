@@ -174,14 +174,16 @@ body{
     width: 20rem;
     height: 20rem;
   }
+  body #left-container{
+    justify-content:center !important;
+  }
   #robot-img-container{
     width: 20rem;
     height: 20rem;
-    margin-bottom: 2rem;
   }
   #tw-container{
     width: 20rem !important;
-    height: fit-content !important;
+    height: 11rem!important;
     margin-bottom: 4rem;
 
     &> #tw{

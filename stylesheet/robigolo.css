@@ -205,7 +205,7 @@ body #form-input input::placeholder {
   #form-input {
     width: 90vw !important;
     position: absolute !important;
-    bottom: 2rem;
+    bottom: 110px;
   }
   #form-input > input {
     width: 100% !important;
